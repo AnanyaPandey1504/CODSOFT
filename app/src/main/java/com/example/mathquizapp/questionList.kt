@@ -1,15 +1,12 @@
 package com.example.mathquizapp
 
-import Easy
-import Hard
-import Medium
 import kotlin.random.Random
 
 class questionList(private val questionType: String?) {
-    private lateinit var correctAnswer: String
+
     private var questionList = ArrayList<Pair<String,Int>>(10)
     private var questionDataList = ArrayList<Question>(10)
-    private var answer = ""
+    private var correctAnswer = ""
 
     private fun setQuestion(){
         when(questionType){

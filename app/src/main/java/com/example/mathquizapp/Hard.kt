@@ -1,3 +1,5 @@
+package com.example.mathquizapp
+
 import kotlin.random.Random
 
 object Hard {

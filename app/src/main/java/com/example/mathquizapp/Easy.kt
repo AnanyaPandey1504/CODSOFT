@@ -1,3 +1,5 @@
+package com.example.mathquizapp
+
 import kotlin.random.Random
 
 object Easy {
@@ -12,14 +14,14 @@ object Easy {
         val problem="$num1 $operator $num2"
 
         try{
-            answer=when(operator){
+            answer =when(operator){
                 "+" -> num1 + num2
                 "-" -> num1 - num2
                 "x" -> num1 * num2
                 else -> num1/num2
             }
         }catch (e:ArithmeticException){
-            answer=77777777
+            answer =77777777
         }
         return Pair(problem, answer)
     }

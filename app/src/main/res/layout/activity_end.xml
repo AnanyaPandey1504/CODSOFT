@@ -9,13 +9,14 @@
     tools:ignore="HardcodedText">
 
     <TextView
-        android:id="@+id/FinalScore"
+        android:id="@+id/tvScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/scorebg"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="30dp"
-        android:text="FINAL SCORE"
+        android:text="FINAL SCORE\n8/10"
         android:textColor="@color/white"
         android:textSize="45sp"
         android:textStyle="italic"
@@ -25,20 +26,17 @@
         tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:layout_margin="20dp"
-        tools:listitem="@layout/item_questions"
-        app:layout_constraintBottom_toTopOf="@+id/home"
+        android:id="@+id/rvQuestionList"
+        android:layout_width="346dp"
+        android:layout_height="483dp"
+        android:layout_margin="40dp"
+        app:layout_constraintBottom_toTopOf="@id/btnHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FinalScore" />
+        app:layout_constraintTop_toBottomOf="@+id/tvScore" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/home"
+        android:id="@+id/btnHome"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_bg"

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import com.example.mathquizapp.databinding.ActivityPlayQuizBinding
 import java.lang.StackWalker.Option
 
@@ -13,7 +14,7 @@ class playQuiz : AppCompatActivity() {
     var binding: ActivityPlayQuizBinding? = null
 
     private var position = 0
-    private var score = 0
+    private var score=0
     var questionDataList = ArrayList<Question>(10)
 
 
@@ -58,7 +59,7 @@ class playQuiz : AppCompatActivity() {
        binding?.Question?.text=questionDataList[position].problem
    }
 
-
+    
     private fun onSelectOption(option:String){
         if(option==questionDataList[position].answer)
             score++
@@ -79,8 +80,10 @@ class playQuiz : AppCompatActivity() {
     private fun endGame(){
 
         val intent= Intent(this,EndActivity::class.java)
-        intent.putExtra("Score", score)
-        intent.putExtra("DataSet",questionDataList)
+        intent.putExtra("score",score)
+        intent.putExtra("dataSet",questionDataList)
+        startActivity(intent)
+        Log.d("playQuiz","Ending game with:$score")
         finish()
         binding=null
     }
